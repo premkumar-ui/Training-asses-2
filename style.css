@@ -197,7 +197,7 @@
  }
 
  .banner {
-     padding: 1rem 0px;
+     padding: 2rem 0px;
      text-align: center;
  }
 
@@ -207,3 +207,42 @@
      -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
  }
+
+.brands {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.brands-track {
+  display: flex;
+  width: max-content;
+  animation: scrollBrands 30s linear infinite;
+}
+
+.brands-track img {
+  height: 80px;
+  margin-right: 60px;
+  flex-shrink: 0;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+@keyframes scrollBrands {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .brands-track {
+    gap: 40px;
+  }
+
+  .brands-track img {
+    height: 60px;
+  }
+}

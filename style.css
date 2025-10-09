@@ -5,19 +5,23 @@
  }
 
  body {
-     font-family: Arial, sans-serif;
+     font-family: "Montserrat", Sans-serif;
  }
 
+ header {
+     position: sticky;
+     top: 0;
+ }
  nav {
-     background-color: #af4f4f;
+     background-color: #ffffff; 
      display: flex;
      justify-content: space-between;
      align-items: center;
-     padding: 16px 20px;
+     padding: 1.5rem 1.8rem;
  }
 
  .logo {
-     color: white;
+     color: black;
      font-size: 24px;
      font-weight: bold;
      text-decoration: none;
@@ -30,20 +34,25 @@
  }
 
  .nav-links a {
-     color: white;
+     color: #0E1E2F;
+     text-transform: uppercase;
      text-decoration: none;
+     /* min-width: 3vw; */
+     font-size: 14px;
+     font-weight: 600;
      padding: 8px 12px;
      transition: all 0.3s;
  }
 
  .nav-links a:hover {
-     background-color: #e59494;
-     border-radius: 4px;
+     color: #4EF1AE;
  }
 
  .dropdown {
-     width: 100%;
+     /* width: 100%; */
      position: relative;
+     padding: 3px 0px;
+     transition: display 0.3s ease;
  }
 
  .dropdown-con {
@@ -52,10 +61,11 @@
      top: 27px;
      left: 0;
      border-radius: 4px;
-     background-color: #444;
+     background-color: #fff;
      min-width: 150px;
      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
      z-index: 1;
+     transition: all 0.3s ease;
  }
 
  .dropdown-con a {
@@ -68,34 +78,37 @@
  }
 
  .login-btn {
-     background-color: #ff6600;
-     color: white;
+     background-color: #4EF1AE;
+     color: #0E1E2F;
      border: none;
+     font-size: 14px;
+     font-weight: 600;
      /* margin: auto; */
      display: flex;
      justify-content: center;
      align-items: center;
-     padding: 8px 16px;
+     padding: 10px 2rem;
      cursor: pointer;
-     border-radius: 4px;
-     transition: background 0.3s;
+     border-radius: 10px;
+     transition: all 0.3s ease;
  }
 
  .login-btn:hover {
-     background-color: #e65c00;
+     background-color: #ffffff;
+     color: #4EF1AE;
  }
 
  @media (max-width: 768px) {
      nav {
          flex-direction: column;
          align-items: flex-start;
-        
+
      }
 
      .nav-links {
          flex-direction: column;
          width: 100%;
-          padding: 1rem 0px;
+         padding: 1rem 0px;
      }
 
      .nav-links a,
@@ -103,4 +116,94 @@
          width: 100%;
          text-align: left;
      }
+ }
+
+ .hero {
+     height: 90vh;
+     background: linear-gradient(rgba(0, 0, 0, 0.6),
+             rgba(0, 0, 0, 0.6)),
+         url('./assets/images/freepik__full-stack-developer.png') no-repeat center center/cover;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     color: #fff;
+     position: relative;
+     overflow: hidden;
+     z-index: -1;
+ }
+
+ .hero-content {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+ }
+
+ .hero h1 {
+     position: absolute;
+     color: white;
+     font-size: 3rem;
+     opacity: 0;
+     animation: fadeInOut 9s infinite;
+ }
+
+ .hero h1:nth-child(1) {
+     animation-delay: 0s;
+ }
+
+ .hero h1:nth-child(2) {
+     animation-delay: 3s;
+ }
+
+ .hero h1:nth-child(3) {
+     animation-delay: 6s;
+ }
+
+ @keyframes fadeInOut {
+     0% {
+         opacity: 0;
+         transform: translateY(20px);
+     }
+
+     10% {
+         opacity: 1;
+         transform: translateY(0);
+     }
+
+     30% {
+         opacity: 1;
+     }
+
+     40% {
+         opacity: 0;
+         transform: translateY(-20px);
+     }
+
+     100% {
+         opacity: 0;
+     }
+ }
+
+ @media (max-width: 600px) {
+     .hero h1 {
+         font-size: 2rem;
+     }
+ }
+
+ .banner-section {
+     height: 50vh;
+     overflow: hidden;
+ }
+
+ .banner {
+     padding: 1rem 0px;
+     text-align: center;
+ }
+
+ .banner-h2 {
+     font-size: 2.5vw;
+     background: linear-gradient(to bottom, #4EF1AE 0%, #395270 100%);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
  }
